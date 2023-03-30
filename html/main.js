@@ -6,10 +6,10 @@ import {
   w3mProvider,
 } from "@web3modal/ethereum";
 import { Web3Modal } from "@web3modal/html";
-
+import { neonDevnet } from "./neon-devnet.tsx";
 // 1. Define constants
 const projectId = import.meta.env.VITE_PROJECT_ID;
-const chains = [mainnet, polygon, avalanche, arbitrum];
+const chains = [mainnet, polygon, avalanche, arbitrum, neonDevnet];
 
 // 2. Configure wagmi client
 const { provider } = configureChains(chains, [w3mProvider({ projectId })]);
@@ -24,9 +24,7 @@ const ethereumClient = new EthereumClient(wagmiClient, chains);
 export const web3Modal = new Web3Modal(
   {
     projectId,
-    walletImages: {
-      safe: "https://pbs.twimg.com/profile_images/1566773491764023297/IvmCdGnM_400x400.jpg",
-    },
+    
   },
   ethereumClient
 );

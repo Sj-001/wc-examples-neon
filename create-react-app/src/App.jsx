@@ -15,7 +15,7 @@ import {
   optimism,
   polygon,
 } from "wagmi/chains";
-
+import { neonDevnet } from "./components/neon-devnet.tsx";
 // 1. Get projectID at https://cloud.walletconnect.com
 if (!process.env.REACT_APP_PROJECT_ID) {
   throw new Error("You need to provide REACT_APP_PROJECT_ID env variable");
@@ -32,6 +32,7 @@ const chains = [
   bsc,
   optimism,
   fantom,
+  neonDevnet
 ];
 
 const { provider } = configureChains(chains, [w3mProvider({ projectId })]);

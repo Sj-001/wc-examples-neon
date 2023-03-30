@@ -16,7 +16,10 @@ import {
   optimism,
   polygon,
 } from "wagmi/chains";
+import { neonDevnet } from "../components/neon-devnet";
 import "../styles.css";
+
+
 
 // 1. Get projectID at https://cloud.walletconnect.com
 if (!process.env.NEXT_PUBLIC_PROJECT_ID) {
@@ -34,6 +37,7 @@ const chains = [
   optimism,
   gnosis,
   fantom,
+  neonDevnet
 ];
 
 const { provider } = configureChains(chains, [w3mProvider({ projectId })]);
